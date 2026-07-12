@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerControl : MonoBehaviour
 {
     public InputAction moveAction;
+    public InputAction fireAction;
+    public GameObject bulletPrefab;
 
     private float speed = 15;
     private float xRange = 12;
@@ -12,6 +14,7 @@ public class PlayerControl : MonoBehaviour
     private void OnEnable()
     {
         moveAction.Enable();
+        fireAction.Enable();
     }
 
     // Update is called once per frame
@@ -19,6 +22,7 @@ public class PlayerControl : MonoBehaviour
     {
         MovePlayer();
         KeepInBounds();
+        FireBullet();
     }
 
     void MovePlayer()
@@ -38,6 +42,14 @@ public class PlayerControl : MonoBehaviour
         if (transform.position.x > xRange)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
+        }
+    }
+
+    void FireBullet()
+    {
+        if (fireAction.triggered)
+        {
+            Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
         }
     }
 }
