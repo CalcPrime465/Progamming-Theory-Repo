@@ -7,11 +7,11 @@ public class PlayerControl : MonoBehaviour
     public InputAction fireAction;
     public GameObject bulletPrefab;
 
-    private float speed = 15;
+    public float speed = 15;
     private float xRange = 12;
     private Vector2 moveInput;
 
-    private void OnEnable()
+    void OnEnable()
     {
         moveAction.Enable();
         fireAction.Enable();
@@ -45,7 +45,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    void FireBullet()
+    public virtual void FireBullet()
     {
         if (fireAction.triggered)
         {
