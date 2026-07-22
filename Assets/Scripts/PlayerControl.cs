@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,21 +6,26 @@ public class PlayerControl : MonoBehaviour
 {
     public InputAction moveAction;
     public InputAction fireAction;
+    public InputAction changePlayerAction;
     public GameObject bulletPrefab;
+    public GameObject playerTypePrefab;
 
-    public float speed = 15;
+    public float speed = 20;
     private float xRange = 12;
+    private float changePlayerDelay = 0.5f;
     private Vector2 moveInput;
 
-    void OnEnable()
+    private void OnEnable()
     {
         moveAction.Enable();
         fireAction.Enable();
+        StartCoroutine(EnablePlayerChange(changePlayerDelay));
     }
 
     // Update is called once per frame
     void Update()
     {
+        ChangePlayerType();
         MovePlayer();
         KeepInBounds();
         FireBullet();
@@ -51,5 +57,20 @@ public class PlayerControl : MonoBehaviour
         {
             Instantiate(bulletPrefab, transform.position, bulletPrefab.transform.rotation);
         }
+    }
+
+    void ChangePlayerType()
+    {
+        if (changePlayerAction.triggered)
+        {
+            Instantiate(playerTypePrefab, transform.position, playerTypePrefab.transform.rotation);
+            Destroy(gameObject);
+        }
+    }
+
+    IEnumerator EnablePlayerChange(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        changePlayerAction.Enable();
     }
 }

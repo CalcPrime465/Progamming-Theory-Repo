@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2429036753411794433
+--- !u!1 &4043328847243319493
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2095783717348931391}
-  - component: {fileID: 5978639801906121481}
-  - component: {fileID: 8089687530335227466}
-  - component: {fileID: 3803754357949946876}
-  - component: {fileID: 2655550412560140360}
+  - component: {fileID: 7166246154488753294}
+  - component: {fileID: 7339860615221448985}
+  - component: {fileID: 2367979486062916482}
+  - component: {fileID: 6920139023495577478}
+  - component: {fileID: 5033332980888333239}
   m_Layer: 0
-  m_Name: Player_Sphere
+  m_Name: Player_Default
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2095783717348931391
+--- !u!4 &7166246154488753294
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429036753411794433}
+  m_GameObject: {fileID: 4043328847243319493}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2951, y: -2.11, z: -3.67}
+  m_LocalPosition: {x: 0, y: -2, z: -3.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5978639801906121481
+--- !u!33 &7339860615221448985
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429036753411794433}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8089687530335227466
+  m_GameObject: {fileID: 4043328847243319493}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2367979486062916482
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429036753411794433}
+  m_GameObject: {fileID: 4043328847243319493}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -92,13 +92,13 @@ MeshRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3803754357949946876
-SphereCollider:
+--- !u!65 &6920139023495577478
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429036753411794433}
+  m_GameObject: {fileID: 4043328847243319493}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -111,30 +111,30 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2655550412560140360
+--- !u!114 &5033332980888333239
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2429036753411794433}
+  m_GameObject: {fileID: 4043328847243319493}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abafeb5b1f9ee7442a9e262e8506854d, type: 3}
+  m_Script: {fileID: 11500000, guid: fe79fb67bd3f44c4db56befb142c13c6, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Player_SphereControl
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControl
   moveAction:
     m_Name: Move
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 260a0bbb-ad19-4f7f-ba4b-d274830616d3
+    m_Id: a98c7df3-a08f-4755-af09-ed32599b7b51
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 2D Vector
-      m_Id: 5f155ed9-e7a3-4dd1-bcfc-94d059f76db9
+      m_Id: fed73e50-5a2b-4da6-a722-11b116c42894
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
@@ -142,7 +142,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 4
     - m_Name: up
-      m_Id: 1c058bdf-bc1a-4caf-ba14-339e50558941
+      m_Id: c6a7b718-9e88-4449-810c-76294265058b
       m_Path: 
       m_Interactions: 
       m_Processors: 
@@ -150,7 +150,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: down
-      m_Id: c3640eb0-cfd3-42e7-85f8-81dd9ac4f5a5
+      m_Id: 5a019ad1-e8c1-4021-9795-3acdc6ca1ee6
       m_Path: 
       m_Interactions: 
       m_Processors: 
@@ -158,7 +158,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: left
-      m_Id: fab0852a-095d-4f39-acd5-350e74607800
+      m_Id: eb9b35a1-7af6-4ece-b329-317d4fb022aa
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
@@ -166,7 +166,7 @@ MonoBehaviour:
       m_Action: Move
       m_Flags: 8
     - m_Name: right
-      m_Id: 2884b552-e381-486b-bfc2-b1312939b855
+      m_Id: a7403944-ba09-4944-af8e-1b2447140e49
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
@@ -178,12 +178,12 @@ MonoBehaviour:
     m_Name: Fire
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: bd33c13f-bb25-4825-899c-f52d263589a4
+    m_Id: 990528a6-585e-4627-895b-c7ac8f32ae79
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: b971ac49-edb6-46f4-ac0a-9d39e6d47905
+      m_Id: 1133a510-c824-4890-a84a-664260684058
       m_Path: <Keyboard>/space
       m_Interactions: 
       m_Processors: 
@@ -195,12 +195,12 @@ MonoBehaviour:
     m_Name: Change Player
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: bd2a1983-7b4b-49b9-87b4-34a6bde5aad8
+    m_Id: 30a8bdf6-ebdf-4e6a-a3f1-fe6d73a1aa53
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: f4c80f4c-b314-4804-9a0c-17959fe669dd
+      m_Id: ca4591a7-166f-480c-b62d-a5625c2d94ea
       m_Path: <Keyboard>/c
       m_Interactions: 
       m_Processors: 
@@ -208,6 +208,6 @@ MonoBehaviour:
       m_Action: Change Player
       m_Flags: 0
     m_Flags: 0
-  bulletPrefab: {fileID: 7341636418060871998, guid: f1d209bbb1980364fa178b0f35aff65a, type: 3}
-  playerTypePrefab: {fileID: 4043328847243319493, guid: 53edb5d2f96f50d40b7e19fe668d20fd, type: 3}
-  speed: 15
+  bulletPrefab: {fileID: 7325713366286097556, guid: 69c3ec82faa383e4fb5f567b6e430867, type: 3}
+  playerTypePrefab: {fileID: 2429036753411794433, guid: d62a74dc388926748a2df2c3627306ac, type: 3}
+  speed: 20

@@ -5,7 +5,7 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject enemyPrefab;
 
-    private float initialSpawnRate = 2;
+    private float initialSpawnRate = 1.5f;
     private float maxSpawnRate = 0.25f;
     private float spawnRateIncrease = 1.01f;
     private float spawnRangeX = 12;
